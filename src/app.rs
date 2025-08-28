@@ -325,7 +325,7 @@ where
                         object.size, size
                     ),
                 }),
-                authenticated: Some(true),
+                authenticated: Some(false),
                 actions: None,
             };
         }
@@ -349,7 +349,7 @@ where
                     code: 500,
                     message: err.to_string(),
                 }),
-                authenticated: Some(true),
+                authenticated: Some(false),
                 actions: None,
             };
         }
@@ -367,14 +367,14 @@ where
                     oid: object.oid,
                     size,
                     error: None,
-                    authenticated: Some(true),
+                    authenticated: Some(false),
                     actions: None,
                 },
                 None => lfs::ResponseObject {
                     oid: object.oid,
                     size: object.size,
                     error: None,
-                    authenticated: Some(true),
+                    authenticated: Some(false),
                     actions: Some(lfs::Actions {
                         download: None,
                         upload: Some(lfs::Action {
@@ -417,7 +417,7 @@ where
                     oid: object.oid,
                     size,
                     error: None,
-                    authenticated: Some(true),
+                    authenticated: Some(false),
                     actions: Some(lfs::Actions {
                         download: Some(lfs::Action {
                             href: storage
@@ -446,7 +446,7 @@ where
                         code: 404,
                         message: "object not found".into(),
                     }),
-                    authenticated: Some(true),
+                    authenticated: Some(false),
                     actions: None,
                 },
             }
